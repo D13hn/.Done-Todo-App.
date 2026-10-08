@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+* {
+    font-family: "JetBrains Mono", monospace;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 1.5rem;
+    height: 100vh;   
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1rem;
+    margin-right: 5px;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: lab(81.38% -62.15 44.13 / 0.59);
+    cursor: pointer;
+}
+
+header span {
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    display: inline-block;
+}
+
+header span:hover{
+    color: lab(81.38% -62.15 44.13 / 0.59);   
+}
+
+/*   start src   */
+.src {
+    margin: 1.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #000;
+    height: 40px;
+    border-radius: 20px;
+}
+
+#txt {
+    cursor: text;
+    border: none;
+    padding-left: 1rem;
+    outline: none;
+    border-radius: 20px;
+    width: 60%;
+}
+
+#btn-src {
+    background-color: lab(81.38% -62.15 44.13 / 0.59);
+    border: none;
+    border-radius: 20px;
+    height: 100%;
+    width: 90px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#btn-src:hover {
+    background-color: lab(63.45% -55.91 41.79 / 0.66);
+}
+
+/*   start info   */
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 2rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: transparent;
+    
+    /* أنيميشن الظهور التلقائي للمهمة الجديدة */
+    animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    transition: all 0.3s ease;
+}
+
+/* كلاس يتم تفعيله قبل حذف العنصر برمجياً لتشغيل أنيميشن التلاشي والخروج */
+.contact.fall {
+    animation: slideOut 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.allcontact {
+    display: flex;
+    align-items: center;
+}
+
+.task-checkbox {
+    margin-right: 8px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+.write {
+    font-size: 1rem;
+    transition: all 0.25s ease-in-out;
+}
+
+#btn {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    border: 1px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btn:hover {
+    background-color: #e94545;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* أنيميشن لتكبير العداد الرقمي بشكل ارتدادي سريع عند التحديث */
+header span.pop {
+    animation: popScale 0.15s ease-in-out;
+    color: lab(81.38% -62.15 44.13 / 0.59);
+}
+
+/* حركات الأنيميشن (Keyframes) */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.9);
+    }
+}
+
+@keyframes popScale {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
